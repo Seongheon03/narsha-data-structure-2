@@ -7,29 +7,28 @@ public class EmployeeManager {
 
     public void uploadEmployee(){
         Employee e = new Employee();
-        int department = 0;
         Boolean check = true;
 
         list.addLast(e);
         System.out.print("사원 코드 : ");
-        e.setCode(sc.nextInt());
+        e.setCode(sc.nextLine());
         System.out.print("사원 이름 : ");
         e.setName(sc.nextLine());
         System.out.print("전화번호 : ");
         e.setPhone(sc.nextLine());
-        System.out.print("사원 부서 (1. 인사팀 / 2. 개발팀 / 3. 디자인팀) :");
-        sc.nextInt(department);
+        System.out.print("사원 부서 ( 인사팀 / 개발팀 / 디자인팀 ) : ");
         while(check){
+            String department = sc.nextLine();
             switch(department){
-                case 1:
+                case "인사팀":
                     e.setDepartment(Department.HUMAN_RESOURCE);
                     check = false;
                     break;
-                case 2:
+                case "개발팀":
                     e.setDepartment(Department.DEVELOPMENT);
                     check = false;
                     break;
-                case 3:
+                case "디자인팀":
                     e.setDepartment(Department.DESIGN);
                     check = false;
                     break;
@@ -42,6 +41,7 @@ public class EmployeeManager {
         System.out.print("가입 일자 : ");
         e.setSignUpDate(sc.nextLine());
         System.out.println("등록이 완료되었습니다.");
+
     }
 
     void printEmployeeAll(){
@@ -56,17 +56,38 @@ public class EmployeeManager {
 
     void removeEmployee(){
         Employee e = new Employee();
-        int code;
-        int i = 0;
+        String input;
+        String check = "1";
 
-        code = sc.nextInt();
-        list.get(i);
-        while(i <= list.size()){
-            if(list.get(i))
+        System.out.print("삭제할 사원의 코드 : ");
+        input = sc.nextLine();
+        for(int i = 0; i < list.size(); i++){
+            if(list.get(i).getCode() == input){
+                System.out.println("삭제할 사원의 정보 : ");
+                list.get(i).getName();
+                list.get(i).getPhone();
+                list.get(i).getDepartment();
+                list.get(i).getAddress();
+                list.get(i).getSignUpDate();
+                while(check != "Y" || check != "N") {
+                    System.out.println("삭제하시겠습니까? ( Y / N ) : ");
+                    check = sc.nextLine();
+                    if (check == "Y") {
+                        list.remove(i);
+                        System.out.println("삭제되었습니다.");
+                    }
+                    else if(check == "N")
+                        System.out.println("취소되었습니다.");
+                    else
+                        System.out.println("Y 또는 N만 입력해 주세요.");
+                }
+                break;
+            }
         }
     }
 
     void moveDepartment(int code){
-
+        System.out.print("부서를 옮길 사원의 번호를 입력하세요 : ");
+        String input = sc.nextLine();
     }
 }
