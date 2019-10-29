@@ -36,8 +36,16 @@ enum Department {
         this.phone = phone;
     }
 
-    public Department getDepartment() {
-        return department;
+    public String getDepartment() {
+        switch(this.department){
+            case HUMAN_RESOURCE:
+                return "인사팀";
+            case DEVELOPMENT:
+                return "개발팀";
+            case DESIGN:
+                return "디자인팀";
+        }
+        return null;
     }
 
     public Boolean setDepartment(String department, Employee e) {
