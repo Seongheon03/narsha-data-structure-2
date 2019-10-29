@@ -17,24 +17,10 @@ public class EmployeeManager {
         System.out.print("전화번호 : ");
         e.setPhone(sc.nextLine());
         System.out.print("사원 부서 ( 인사팀 / 개발팀 / 디자인팀 ) : ");
+        // 수정해보기
         while(check){
             String department = sc.nextLine();
-            switch(department){
-                case "인사팀":
-                    e.setDepartment(Department.HUMAN_RESOURCE);
-                    check = false;
-                    break;
-                case "개발팀":
-                    e.setDepartment(Department.DEVELOPMENT);
-                    check = false;
-                    break;
-                case "디자인팀":
-                    e.setDepartment(Department.DESIGN);
-                    check = false;
-                    break;
-                default:
-                    System.out.println("다시 입력해주세요");
-            }
+            check = e.setDepartment(department, e);
         }
         System.out.print("사원 주소 : ");
         e.setAddress(sc.nextLine());
@@ -49,9 +35,7 @@ public class EmployeeManager {
     }
 
     void printEmployeeByCode(){
-        int code;
 
-        code = sc.nextInt();
     }
 
     void removeEmployee(){
@@ -81,13 +65,28 @@ public class EmployeeManager {
                     else
                         System.out.println("Y 또는 N만 입력해 주세요.");
                 }
-                break;
+                return;
             }
         }
+        System.out.println("사원을 찾을 수 없습니다.");
     }
 
     void moveDepartment(int code){
         System.out.print("부서를 옮길 사원의 번호를 입력하세요 : ");
         String input = sc.nextLine();
+        Boolean check = false;
+
+        for(int i = 0; i < list.size(); i++){
+            if(list.get(i).getCode() == input){
+                System.out.println("현재 사원의 부서 : " + list.get(i).getDepartment());
+                System.out.print("옮길 부서 ( 인사팀 / 개발팀 / 디자인팀 ) : ");
+                while(!check) {
+                    String department = sc.nextLine();
+                    check = list.get(i).setDepartment(department, list.get(i));
+                }
+                return;
+            }
+        }
+        System.out.println("사원을 찾을 수 없습니다.");
     }
 }
