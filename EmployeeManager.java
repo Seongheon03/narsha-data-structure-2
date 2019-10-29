@@ -17,7 +17,6 @@ public class EmployeeManager {
         System.out.print("전화번호 : ");
         e.setPhone(sc.nextLine());
         System.out.print("사원 부서 ( 인사팀 / 개발팀 / 디자인팀 ) : ");
-        // 수정해보기
         while(check){
             String department = sc.nextLine();
             check = e.setDepartment(department, e);
