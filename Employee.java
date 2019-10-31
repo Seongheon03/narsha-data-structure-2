@@ -1,22 +1,22 @@
-enum Department{
+enum Department {
     HUMAN_RESOURCE,
     DEVELOPMENT,
-    DESIGN
+    DESIGN;
 }
 
-public class Employee{
-    private int code;
+    public class Employee{
+    private String code;
     private String name;
     private String phone;
     private Department department;
     private String address;
     private String signUpDate;
 
-    public int getCode() {
+    public String getCode() {
         return code;
     }
 
-    public void setCode(int code) {
+    public void setCode(String code) {
         this.code = code;
     }
 
@@ -36,12 +36,33 @@ public class Employee{
         this.phone = phone;
     }
 
-    public Department getDepartment() {
-        return department;
+    public String getDepartment() {
+        switch(this.department){
+            case HUMAN_RESOURCE:
+                return "인사팀";
+            case DEVELOPMENT:
+                return "개발팀";
+            case DESIGN:
+                return "디자인팀";
+        }
+        return null;
     }
 
-    public void setDepartment(Department department) {
-        this.department = department;
+    public Boolean setDepartment(String department, Employee e) {
+        switch(department){
+            case "인사팀":
+                this.department = Department.HUMAN_RESOURCE;
+                return true;
+            case "개발팀":
+                this.department = Department.DEVELOPMENT;
+                return true;
+            case "디자인팀":
+                this.department = Department.DESIGN;
+                return true;
+            default:
+                System.out.println("다시 입력해주세요");
+                return false;
+        }
     }
 
     public String getAddress() {
