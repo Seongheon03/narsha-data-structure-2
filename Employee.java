@@ -4,7 +4,8 @@ enum Department {
     DESIGN;
 }
 
-    public class Employee{
+public class Employee extends BassFrame{
+    public String getCode;
     private String code;
     private String name;
     private String phone;
@@ -48,7 +49,7 @@ enum Department {
         return null;
     }
 
-    public Boolean setDepartment(String department, Employee e) {
+    public Boolean setDepartment(String department) {
         switch(department){
             case "인사팀":
                 this.department = Department.HUMAN_RESOURCE;
@@ -60,7 +61,6 @@ enum Department {
                 this.department = Department.DESIGN;
                 return true;
             default:
-                System.out.println("다시 입력해주세요");
                 return false;
         }
     }
