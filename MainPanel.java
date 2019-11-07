@@ -6,7 +6,6 @@ import java.util.LinkedList;
 public class MainPanel extends BassFrame{
 
     static LinkedList<Employee> list = new LinkedList<Employee>();
-    JPanel mainPanel;
     String[] buttonTitle = "사원등록, 사원 전체 조회, 사원 조회, 사원 해고, 사원 부서 이동, 프로그램 종료".split(", ");
     JButton[] jbt = new JButton[6];
 
@@ -39,7 +38,6 @@ public class MainPanel extends BassFrame{
         list.addLast(employee2);
 
         jbt[0].addActionListener(e->{
-            //control.UploadEmployee();
             new EmployeeManager(1, list).setVisible(true);
         });
 
