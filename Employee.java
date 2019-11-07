@@ -1,11 +1,13 @@
+import javax.swing.*;
+import java.awt.*;
+
 enum Department {
     HUMAN_RESOURCE,
     DEVELOPMENT,
     DESIGN;
 }
 
-public class Employee extends BassFrame{
-    public String getCode;
+public class Employee extends BaseFrame {
     private String code;
     private String name;
     private String phone;
