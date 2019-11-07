@@ -17,19 +17,5 @@ public class PrintEmployeeInformation extends BaseFrame {
 
         return showPanel;
     }
-
-        public static void main(String[] args) {
-                LinkedList<Employee> list = new LinkedList<>();
-                Employee employee1 = new Employee();
-
-                employee1.setCode("1234");
-                employee1.setName("김");
-                employee1.setPhone("1234");
-                employee1.setDepartment("인사팀");
-                employee1.setAddress("대구");
-                employee1.setSignUpDate("19.12.12");
-                list.add(employee1);
-
-                //new PrintEmployeeInformation(list, 0).setVisible(true);
-        }
+    
 }
