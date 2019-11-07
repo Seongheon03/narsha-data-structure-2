@@ -68,9 +68,6 @@ public class EmployeeManager extends BaseFrame {
 
         if(list.size() == 0){
             add(new JLabel("등록된 사원이 없습니다.", 0), BorderLayout.CENTER);
-
-
-
             return;
         }
 
