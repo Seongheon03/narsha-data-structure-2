@@ -3,6 +3,7 @@ import java.awt.*;
 import java.util.LinkedList;
 
 public class RemoveEmployeePanel extends BaseFrame {
+
     public RemoveEmployeePanel(LinkedList<Employee> list, int i){
         PrintEmployeeInformation print = new PrintEmployeeInformation();
         setLayout(new FlowLayout());
@@ -28,4 +29,5 @@ public class RemoveEmployeePanel extends BaseFrame {
             dispose();
         });
     }
+    
 }
