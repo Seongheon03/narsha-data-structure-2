@@ -147,7 +147,6 @@ public class EmployeeManager extends BaseFrame {
         JTextField inputCode = new JTextField(20);
         JTextField changeDepartment = new JTextField(20);
         JButton check = new JButton("검색");
-
         Employee employee = new Employee();
 
         add(new JLabel("사원 번호",0));
