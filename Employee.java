@@ -1,13 +1,11 @@
-import javax.swing.*;
-import java.awt.*;
-
 enum Department {
     HUMAN_RESOURCE,
     DEVELOPMENT,
     DESIGN;
 }
 
-public class Employee extends BaseFrame {
+public class Employee{
+
     private String code;
     private String name;
     private String phone;
@@ -82,4 +80,5 @@ public class Employee extends BaseFrame {
     public void setSignUpDate(String signUpDate) {
         this.signUpDate = signUpDate;
     }
+
 }
