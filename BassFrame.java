@@ -21,4 +21,5 @@ public class BaseFrame extends JFrame {
     public void showMsg(String text){
         JOptionPane.showMessageDialog(null, text, "", JOptionPane.INFORMATION_MESSAGE);
     }
+    
 }
