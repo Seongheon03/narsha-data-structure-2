@@ -9,7 +9,6 @@ public class MainPanel extends BaseFrame {
     JButton[] jbt = new JButton[6];
 
     public MainPanel(){
-
         setLayout(new GridLayout(3, 2, 5, 5));
 
         for(int i = 0; i < jbt.length ; i++){
@@ -45,4 +44,5 @@ public class MainPanel extends BaseFrame {
     public static void main(String[] args) {
         new MainPanel().setVisible(true);
     }
+    
 }
