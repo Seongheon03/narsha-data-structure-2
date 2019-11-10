@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class MoveDepartmentPanel extends BaseFrame {
+
     public MoveDepartmentPanel(Employee employee){
         super(250, 230);
         setLayout(new GridLayout(0,1,5,5));
@@ -25,8 +26,8 @@ public class MoveDepartmentPanel extends BaseFrame {
             showMsg(employee.getDepartment() + "으로 옮겨졌습니다.");
             dispose();
         });
+        
         endBtn.addActionListener(e->dispose());
-
     }
 
 }
